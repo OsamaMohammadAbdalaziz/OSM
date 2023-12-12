@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const ProductShecma = new mongoose.Shcema(
+const ProductSchema = new mongoose.Schema(
   {
     Name: { type: String, required: true },
     Title: { type: String, required: true },
@@ -19,4 +19,4 @@ const ProductShecma = new mongoose.Shcema(
   },
   { timestamps: true }
 );
-module.exports = mongoose.model("Product", ProductShecma);
+module.exports = mongoose.model("Product", ProductSchema);

@@ -1,3 +1,3 @@
 const mongoose = require("mongoose");
-const UsersShecma = new mongoose.Shcema({}, { timestamps: true });
-module.exports = mongoose.model("Users", UsersShecma);
+const UsersSchema = new mongoose.Schema({}, { timestamps: true });
+module.exports = mongoose.model("Users", UsersSchema);
