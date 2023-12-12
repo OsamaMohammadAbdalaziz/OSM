@@ -18,4 +18,14 @@ module.exports = {
       res.status(500).json("Failed to get the Products");
     }
   },
+  GetProduct: async (req, res) => {
+    const ProductId = req.params.id;
+    try {
+      const Product = await Product.findById(ProductId);
+      const { __v, createdAt, ...ProductData } = Product.doc;
+      res.status(200).json(ProductData);
+    } catch (error) {
+      res.status(500).json("Failed to get the Product");
+    }
+  },
 };
