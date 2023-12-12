@@ -28,4 +28,12 @@ module.exports = {
       res.status(500).json("Failed to get the Product");
     }
   },
+  SearchProducts: async (req, res) => {
+    try {
+      const results = await Product.aggregate([]);
+      res.status(200).json(results);
+    } catch (error) {
+      res.status(500).json("Failed to get the Product");
+    }
+  },
 };
