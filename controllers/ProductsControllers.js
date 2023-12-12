@@ -10,4 +10,12 @@ module.exports = {
       res.status(500).json("Failed to create Products");
     }
   },
+  GetAllProducts: async (req, res) => {
+    try {
+      const Products = await Product.find().sort({ createdAt: -1 });
+      res.status(200).json(Products);
+    } catch (error) {
+      res.status(500).json("Failed to get the Products");
+    }
+  },
 };
