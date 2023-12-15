@@ -23,7 +23,7 @@ module.exports = {
   },
   LoginUser: async (req, res) => {
     try {
-      const User = await Users.find({ Email: req.body.Email });
+      const User = await Users.findOne({ Email: req.body.Email });
       !User && res.status(401).json({ Message: "Could not find the User" });
 
       const DecryptedPassword = CryptoJS.AES.decrypt(
@@ -41,7 +41,7 @@ module.exports = {
         process.env.JWT_SEC,
         { expiresIn: "21d" }
       );
-      const { Password, __v, createdAt, ...others } = User._doc;
+      const { Password, __v, updeatAt, createdAt, ...others } = User._doc;
 
       res.status(200).json({ ...others, token: UserToken });
     } catch (error) {
