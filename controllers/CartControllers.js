@@ -35,4 +35,14 @@ module.exports = {
       res.status(500).json(error);
     }
   },
+  getCart: async (req, res) => {
+    const UserId = req.User.Id;
+
+    try {
+      const Cart = await Cart.find({ UserId });
+      res.status(200).json(Cart);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  },
 };
