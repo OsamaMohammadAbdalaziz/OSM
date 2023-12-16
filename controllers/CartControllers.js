@@ -1,6 +1,5 @@
 const Products = require("../models/Products");
 const Cart = require("../models/Cart");
-const Cart = require("../models/Cart");
 
 module.exports = {
   AddCart: async (req, res) => {

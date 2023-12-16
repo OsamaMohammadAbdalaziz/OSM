@@ -20,7 +20,7 @@ app.use(express.urlencoded({ limit: "10mb", extended: true }));
 app.use("/api/", authRoute);
 app.use("/api/Products", ProductRoute);
 app.use("/api/Users", UsersRoute);
-app.use("/api/", CartRoute);
+app.use("/api/Cart", CartRoute);
 app.use("/api/Orders", OrdersRoute);
 
 app.listen(process.env.PORT || port, () =>
