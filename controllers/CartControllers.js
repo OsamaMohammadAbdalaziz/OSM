@@ -45,4 +45,25 @@ module.exports = {
       res.status(500).json(error);
     }
   },
+
+  deleteCartItem: async (req, res) => {
+    const CartItemId = req.params.CartItem;
+
+    try {
+      const updatedCart = await Cart.findOneAndUpdate(
+        {
+          "Products._Id": CartItemId,
+        },
+        { $pull: { Products: { _Id: CartItemId } } },
+        { new: true }
+      );
+      if (!updatedCart) {
+        return res.status(404).json({ Message: "Cart item not found" });
+      }
+
+      res.status(200).json(updatedCart);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  },
 };
