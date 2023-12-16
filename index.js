@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
 const ProductRoute = require("./routes/Products");
 const UsersRoute = require("./routes/Users");
+const CartRoute = require("./routes/Cart");
 const OrdersRoute = require("./routes/Orders");
 const port = 3000;
 
@@ -19,7 +20,9 @@ app.use(express.urlencoded({ limit: "10mb", extended: true }));
 app.use("/api/", authRoute);
 app.use("/api/Products", ProductRoute);
 app.use("/api/Users", UsersRoute);
+app.use("/api/", CartRoute);
 app.use("/api/Orders", OrdersRoute);
+
 app.listen(process.env.PORT || port, () =>
   console.log(`Example app listening on port ${process.env.PORT}!`)
 );
