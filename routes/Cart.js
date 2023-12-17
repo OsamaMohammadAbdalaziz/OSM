@@ -3,7 +3,7 @@ const CartControllers = require("../controllers/CartControllers");
 const { VerifyToken } = require("../middleware/VerifyToken");
 
 router.get("/find/", VerifyToken, CartControllers.getCart);
-router.add("/", VerifyToken, CartControllers.AddCart);
+router.post("/Add/", VerifyToken, CartControllers.AddCart);
 router.delete("/:CartItem", VerifyToken, CartControllers.deleteCartItem);
 
 module.exports = router;
