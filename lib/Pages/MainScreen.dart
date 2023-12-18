@@ -10,7 +10,10 @@ class MainScreen extends StatelessWidget {
         body: Center(
           child: Text(
             "MainScreen",
-            style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontSize: 36,
+                fontWeight: FontWeight.bold,
+                color: Color.fromARGB(0, 0, 0, 0)),
           ),
         ),
       ),
